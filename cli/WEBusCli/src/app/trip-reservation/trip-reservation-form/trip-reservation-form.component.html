@@ -1,0 +1,24 @@
+<div class="row">
+    <form #form="ngForm" (submit)="onSubmit(form)" class="col-md-12">
+        <button type="button" class="btn col-md-1" (click)="service.resetData()">
+            <i class="fas fa-long-arrow-alt-left"></i>
+        </button>
+        <div class="form-group">
+            <label>Trips</label>
+            <select name="trips" class="form-control select" #trips="ngModel" [(ngModel)]="service.formData.busTripID" (change)="onSelectTrip($event)" >
+                <option *ngFor="let trip of service.formTrips" [value]="trip.id">
+                {{(trip.origin ? trip.origin.name : "") + " - " + (trip.destination ? trip.destination.name : "")}}
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Seat</label>
+            <select class="form-control" name="seat" #seat="ngModel" [(ngModel)]="service.formData.busSeatID" (change)="onSelectSeat($event)">
+                <option *ngFor="let seat of service.formSeats" [value]="seat.id">
+                {{seat.seatName}}
+                </option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary col-md-3" align="right" [disabled]="!service.canSubmit()">Book trip</button>
+    </form>
+</div>

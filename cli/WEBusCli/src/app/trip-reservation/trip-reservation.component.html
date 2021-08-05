@@ -1,0 +1,33 @@
+<div class="jumbotron py-3">
+    <h1 class="display-6 text-center">Seat Booking</h1>
+</div>
+<div class="row">
+    <div class="col-md-12" [hidden]="!formVisible()">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Bus</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let trip of service.formTrips">
+                    <td>{{trip.origin ? trip.origin.name : ""}}</td>
+                    <td>{{(trip.destination ? trip.destination.name : "")}}</td>
+                    <td>{{trip.bus ? trip.bus.name : ""}}</td>
+                    <td (click)="showForm(trip)">
+                        <i class="fas fa-plus"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-12" [hidden]="formVisible()">
+        <app-trip-reservation-form></app-trip-reservation-form>
+    </div>
+</div>
+    
+
+

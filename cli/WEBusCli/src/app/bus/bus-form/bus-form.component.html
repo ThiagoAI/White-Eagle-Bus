@@ -1,0 +1,9 @@
+<form #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="tipId" [value]="service.formData.id">
+    <div class="form-group">
+        <label>Name</label>
+        <input class="form-control form-control-lg" placeholder="Bus name" name="busName"
+            #busName="ngModel" [(ngModel)]="service.formData.name">
+    </div>
+    <button type="submit" class="btn btn-primary">Create bus</button>
+</form>

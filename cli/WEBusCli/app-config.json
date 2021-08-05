@@ -1,0 +1,8 @@
+{
+    "baseUrl": "https://localhost:44321/api/",
+    "busApi": "https://localhost:44321/api/Busses",
+    "busSeatsApi": "https://localhost:44321/api/BusSeats",
+    "busTripLocationApi": "https://localhost:44321/api/BusTripLocations",
+    "busTripApi": "https://localhost:44321/api/BusTrips",
+    "busReservationsApi": "https://localhost:44321/api/BusTripSeatBookings"
+}
