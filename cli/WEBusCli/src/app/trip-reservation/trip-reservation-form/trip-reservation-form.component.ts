@@ -35,7 +35,7 @@ export class TripBookingFormComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.postBooking(form)
     // Test for booking concurrency conflict
-    this.postBooking(form)
+    //this.postBooking(form)
   }
 
   postBooking(form: NgForm) {
